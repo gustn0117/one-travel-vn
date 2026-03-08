@@ -4,15 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONE TRAVEL SERVER VN CO.,LTD</title>
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-
     <link href="https://framerusercontent.com/sites/icons/default-favicon-light.v1.png" rel="icon" media="(prefers-color-scheme: light)">
     <link href="https://framerusercontent.com/sites/icons/default-favicon-dark.v1.png" rel="icon" media="(prefers-color-scheme: dark)">
-
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body>
 
@@ -20,13 +17,13 @@
     <nav class="nav">
         <div class="nav__inner">
             <a href="#" class="nav__logo">ONE TRAVEL</a>
-            <div class="nav__links">
-                <a href="#courses">Golf Courses</a>
-                <a href="#services">Services</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#contact" class="nav__cta">Contact</a>
+            <div class="nav__links" id="navLinks">
+                <a href="#vehicles">렌트카</a>
+                <a href="#golf">골프 & 숙소</a>
+                <a href="#gallery">갤러리</a>
+                <a href="#contact" class="nav__cta">문의하기</a>
             </div>
-            <button class="nav__menu" id="navMenu" aria-label="Menu">
+            <button class="nav__menu" id="navMenu" aria-label="메뉴">
                 <span></span><span></span><span></span>
             </button>
         </div>
@@ -35,7 +32,7 @@
     <!-- HERO -->
     <header class="hero">
         <div class="hero__bg">
-            <img src="images/hero-bg.png" alt="Golf course">
+            <img src="images/hero-bg.png" alt="베트남 골프장">
         </div>
         <div class="hero__overlay"></div>
         <div class="hero__content fade-in">
@@ -44,7 +41,7 @@
             <p class="hero__desc">ONE TRAVEL SERVER VN CO., LTD는 베트남 현지 네트워크를 기반으로 골프 여행과 맞춤형 투어 서비스를 전문적으로 제공합니다.</p>
             <div class="hero__actions">
                 <a href="#contact" class="btn btn--primary">문의하기</a>
-                <a href="#courses" class="btn btn--outline">골프장 보기</a>
+                <a href="#vehicles" class="btn btn--outline">서비스 보기</a>
             </div>
         </div>
     </header>
@@ -73,85 +70,78 @@
         </div>
     </section>
 
-    <!-- GOLF COURSES -->
-    <section class="courses" id="courses">
+    <!-- RENTAL CARS -->
+    <section class="vehicles" id="vehicles">
         <div class="container">
             <div class="section-header fade-in">
-                <p class="section-header__label">GOLF COURSES</p>
-                <h2 class="section-header__title">엄선된 프리미엄 골프장</h2>
-                <p class="section-header__desc">검증된 골프장과 리조트를 통해 최상의 라운드 경험을 제공합니다.</p>
+                <p class="section-header__label">RENTAL CAR SERVICE</p>
+                <h2 class="section-header__title">전용 렌트카 서비스</h2>
+                <p class="section-header__desc">카니발, 세도나, 리무진, SUV 등 목적에 맞는 차량으로 편안한 이동을 제공합니다.</p>
             </div>
-            <div class="courses__grid">
-                <div class="course-card fade-in">
-                    <div class="course-card__img">
-                        <img src="images/twin-doves.jpg" alt="Twin Doves Golf Club">
+            <div class="vehicles__grid">
+                <div class="vehicle-card fade-in">
+                    <div class="vehicle-card__img">
+                        <img src="images/twin-doves.jpg" alt="리무진">
                     </div>
-                    <div class="course-card__body">
-                        <h3 class="course-card__name">Twin Doves Golf Club</h3>
-                        <p class="course-card__desc">빈증 지역을 대표하는 프리미엄 회원제 골프 클럽. 넓은 페어웨이와 전략적인 코스 레이아웃이 조화를 이루어 상급자부터 중급자까지 모두 만족도가 높습니다.</p>
-                    </div>
-                </div>
-                <div class="course-card fade-in">
-                    <div class="course-card__img">
-                        <img src="images/song-be.png" alt="Song Be Golf Resort">
-                    </div>
-                    <div class="course-card__body">
-                        <h3 class="course-card__name">Song Be Golf Resort</h3>
-                        <p class="course-card__desc">베트남 최초의 국제 규격 골프장. 자연 지형을 살린 코스 설계와 다양한 난이도의 홀 구성으로 라운드의 재미를 더합니다.</p>
+                    <div class="vehicle-card__body">
+                        <h3 class="vehicle-card__name">프리미엄 리무진</h3>
+                        <p class="vehicle-card__desc">고급스러운 인테리어와 넓은 좌석으로 최상의 이동 경험을 제공합니다. VIP 골프 여행에 적합합니다.</p>
                     </div>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-card__img">
-                        <img src="images/harmonie.png" alt="Harmonie Golf Park">
+                <div class="vehicle-card fade-in">
+                    <div class="vehicle-card__img">
+                        <img src="images/song-be.png" alt="카니발 세도나">
                     </div>
-                    <div class="course-card__body">
-                        <h3 class="course-card__name">Harmonie Golf Park</h3>
-                        <p class="course-card__desc">조용하고 쾌적한 환경 속에서 라운드를 즐길 수 있는 프리미엄 골프 파크. 평탄하면서도 전략적인 요소가 잘 배치되어 있습니다.</p>
-                    </div>
-                </div>
-                <div class="course-card fade-in">
-                    <div class="course-card__img">
-                        <img src="images/jeongsan.png" alt="Jeongsan Golf">
-                    </div>
-                    <div class="course-card__body">
-                        <h3 class="course-card__name">Jeongsan Golf</h3>
-                        <p class="course-card__desc">한국식 운영 시스템과 서비스 품질로 국내 골퍼들에게 특히 인지도가 높은 골프 클럽. 첫 베트남 골프 여행지로 추천합니다.</p>
+                    <div class="vehicle-card__body">
+                        <h3 class="vehicle-card__name">카니발 / 세도나</h3>
+                        <p class="vehicle-card__desc">넉넉한 공간과 쾌적한 승차감으로 그룹 골프 여행에 최적화된 차량입니다.</p>
                     </div>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-card__img">
-                        <img src="images/long-thanh.png" alt="Long Thanh Golf Resort">
+                <div class="vehicle-card fade-in">
+                    <div class="vehicle-card__img">
+                        <img src="images/jeongsan.png" alt="카니발 신형">
                     </div>
-                    <div class="course-card__body">
-                        <h3 class="course-card__name">Long Thanh Golf Resort</h3>
-                        <p class="course-card__desc">호치민 인근 최대 규모 36홀 대형 골프 리조트. 레이크 코스와 힐 코스를 한 곳에서 즐길 수 있습니다.</p>
+                    <div class="vehicle-card__body">
+                        <h3 class="vehicle-card__name">카니발 신형</h3>
+                        <p class="vehicle-card__desc">최신 모델의 프리미엄 인테리어로 특별한 여행 경험을 선사합니다.</p>
                     </div>
                 </div>
-                <div class="course-card fade-in">
-                    <div class="course-card__img">
-                        <img src="images/tan-son-nhat.png" alt="Tan Son Nhat Golf Course">
+                <div class="vehicle-card fade-in">
+                    <div class="vehicle-card__img">
+                        <img src="images/harmonie.png" alt="SUV">
                     </div>
-                    <div class="course-card__body">
-                        <h3 class="course-card__name">Tan Son Nhat Golf Course</h3>
-                        <p class="course-card__desc">호치민 시내 중심 도심형 골프 코스. 비즈니스 일정과 골프를 함께 계획하는 여행객에게 특히 적합합니다.</p>
+                    <div class="vehicle-card__body">
+                        <h3 class="vehicle-card__name">SUV</h3>
+                        <p class="vehicle-card__desc">소규모 인원이나 개별 이동에 적합한 편안하고 안전한 차량입니다.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="services" id="services">
+    <!-- GOLF & ACCOMMODATION -->
+    <section class="golf" id="golf">
         <div class="container">
-            <div class="services__layout">
-                <div class="services__text fade-in">
-                    <p class="section-header__label">RENTAL CAR SERVICE</p>
-                    <h2 class="services__title">이동까지 완성되는 여행,<br>전용 렌트카 서비스</h2>
-                    <p class="services__desc">카니발, 세도나, 리무진 등 목적에 맞는 차량으로 편안한 이동 환경을 제공합니다. 여행 일정에 맞춘 유연한 차량 운영으로 베트남 현지에서도 안심하고 이용하실 수 있습니다.</p>
-                    <a href="#contact" class="btn btn--dark">차량 문의하기</a>
+            <div class="golf__row fade-in">
+                <div class="golf__img">
+                    <img src="images/tan-son-nhat.png" alt="골프장">
                 </div>
-                <div class="services__visual fade-in">
-                    <img src="images/logo.png" alt="ONE TRAVEL">
+                <div class="golf__text">
+                    <p class="section-header__label">GOLF COURSE</p>
+                    <h2 class="golf__title">엄선된 프리미엄 골프장</h2>
+                    <p class="golf__desc">호치민 인근의 검증된 골프장들과 제휴하여 합리적인 일정과 높은 만족도의 라운드 경험을 제공합니다. 도심형 코스부터 리조트형 대형 골프장까지, 원하시는 스타일에 맞춰 추천해 드립니다.</p>
+                    <a href="#contact" class="btn btn--dark">골프 문의</a>
+                </div>
+            </div>
+            <div class="golf__row golf__row--reverse fade-in">
+                <div class="golf__img">
+                    <img src="images/long-thanh.png" alt="호텔 로비">
+                </div>
+                <div class="golf__text">
+                    <p class="section-header__label">ACCOMMODATION</p>
+                    <h2 class="golf__title">프리미엄 숙소 연계</h2>
+                    <p class="golf__desc">골프장 인근의 최고급 리조트 및 호텔과 제휴하여 라운드 후 편안한 휴식을 보장합니다. 골프와 숙박을 함께 계획하는 패키지 상품도 제공합니다.</p>
+                    <a href="#contact" class="btn btn--dark">숙소 문의</a>
                 </div>
             </div>
         </div>
@@ -166,21 +156,30 @@
             </div>
             <div class="gallery__viewport">
                 <div class="gallery__track" id="carouselTrack">
-                    <div class="gallery__slide"><img src="images/gallery-1.png" alt="Gallery 1"></div>
-                    <div class="gallery__slide"><img src="images/gallery-2.png" alt="Gallery 2"></div>
-                    <div class="gallery__slide"><img src="images/gallery-3.png" alt="Gallery 3"></div>
-                    <div class="gallery__slide"><img src="images/gallery-1.png" alt="Gallery 4"></div>
-                    <div class="gallery__slide"><img src="images/gallery-2.png" alt="Gallery 5"></div>
-                    <div class="gallery__slide"><img src="images/gallery-3.png" alt="Gallery 6"></div>
+                    <div class="gallery__slide"><img src="images/gallery-1.png" alt="골프장 1"></div>
+                    <div class="gallery__slide"><img src="images/gallery-2.png" alt="골프장 2"></div>
+                    <div class="gallery__slide"><img src="images/gallery-3.png" alt="골프장 3"></div>
+                    <div class="gallery__slide"><img src="images/gallery-1.png" alt="골프장 4"></div>
+                    <div class="gallery__slide"><img src="images/gallery-2.png" alt="골프장 5"></div>
+                    <div class="gallery__slide"><img src="images/gallery-3.png" alt="골프장 6"></div>
                 </div>
             </div>
             <div class="gallery__nav">
-                <button class="gallery__btn" id="prevBtn" aria-label="Previous">
-                    <img src="images/arrow-left.svg" alt="Back">
+                <button class="gallery__btn" id="prevBtn" aria-label="이전">
+                    <img src="images/arrow-left.svg" alt="이전">
                 </button>
-                <button class="gallery__btn" id="nextBtn" aria-label="Next">
-                    <img src="images/arrow-right.svg" alt="Next">
+                <button class="gallery__btn" id="nextBtn" aria-label="다음">
+                    <img src="images/arrow-right.svg" alt="다음">
                 </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- CLUBHOUSE -->
+    <section class="clubhouse">
+        <div class="container">
+            <div class="clubhouse__inner fade-in">
+                <img src="images/logo.png" alt="골프 클럽하우스" class="clubhouse__img">
             </div>
         </div>
     </section>
@@ -209,7 +208,6 @@
                 </div>
                 <div class="contact__company fade-in">
                     <div class="contact__company-card">
-                        <img src="images/logo.png" alt="ONE TRAVEL" class="contact__logo">
                         <h3 class="contact__company-name">ONE TRAVEL SERVER VN CO.,LTD</h3>
                         <p class="contact__company-addr">64 đường 1E KDC Đại Phúc Green Villas,<br>Bình Hưng, Hồ Chí Minh, Vietnam</p>
                     </div>
@@ -228,6 +226,6 @@
         </div>
     </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=2"></script>
 </body>
 </html>

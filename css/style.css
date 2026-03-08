@@ -1,4 +1,4 @@
-/* ===== RESET ===== */
+/* === RESET === */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 body {
@@ -7,12 +7,14 @@ body {
     color: #1a1a1a;
     overflow-x: hidden;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; display: block; height: auto; }
 button { border: none; background: none; cursor: pointer; font: inherit; }
 
-/* ===== UTILITIES ===== */
+/* === CONTAINER === */
 .container {
     width: 100%;
     max-width: 1200px;
@@ -20,16 +22,17 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     padding: 0 24px;
 }
 
-/* ===== NAV ===== */
+/* === NAV === */
 .nav {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 100;
-    background: rgba(255,255,255,0.92);
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 .nav__inner {
     max-width: 1200px;
@@ -58,16 +61,19 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     color: #555;
     transition: color 0.2s;
 }
-.nav__links a:hover { color: #111; }
-.nav__cta {
+.nav__links a:hover {
+    color: #111;
+}
+a.nav__cta {
     background: #111;
     color: #fff !important;
     padding: 8px 20px;
     border-radius: 8px;
-    font-size: 14px;
     transition: background 0.2s;
 }
-.nav__cta:hover { background: #333; }
+a.nav__cta:hover {
+    background: #333;
+}
 .nav__menu {
     display: none;
     flex-direction: column;
@@ -80,12 +86,12 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     height: 2px;
     background: #333;
     border-radius: 2px;
-    transition: 0.3s;
 }
 
-/* ===== HERO ===== */
+/* === HERO === */
 .hero {
     position: relative;
+    width: 100%;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -94,22 +100,24 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 }
 .hero__bg {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 .hero__bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    animation: heroZoom 20s ease-out forwards;
-}
-@keyframes heroZoom {
-    from { transform: scale(1.1); }
-    to { transform: scale(1); }
+    object-position: center;
 }
 .hero__overlay {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.65) 100%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.65) 100%);
 }
 .hero__content {
     position: relative;
@@ -117,13 +125,14 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     text-align: center;
     padding: 120px 24px 80px;
     max-width: 800px;
+    width: 100%;
 }
 .hero__label {
     font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-weight: 600;
     letter-spacing: 0.2em;
-    color: rgba(255,255,255,0.7);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 20px;
 }
 .hero__title {
@@ -136,7 +145,7 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 }
 .hero__desc {
     font-size: 17px;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
     line-height: 1.7;
     margin-bottom: 40px;
     max-width: 560px;
@@ -150,7 +159,7 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     flex-wrap: wrap;
 }
 
-/* ===== BUTTONS ===== */
+/* === BUTTONS === */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -161,6 +170,7 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     font-weight: 600;
     transition: all 0.2s;
     cursor: pointer;
+    border: none;
 }
 .btn--primary {
     background: #fff;
@@ -173,25 +183,24 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
 .btn--outline {
     background: transparent;
     color: #fff;
-    border: 1.5px solid rgba(255,255,255,0.4);
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
 }
 .btn--outline:hover {
     border-color: #fff;
-    background: rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.1);
 }
 .btn--dark {
     background: #111;
     color: #fff;
-    padding: 14px 32px;
-    border-radius: 12px;
 }
 .btn--dark:hover {
     background: #333;
     transform: translateY(-1px);
 }
 
-/* ===== STATS ===== */
+/* === STATS === */
 .stats {
+    width: 100%;
     background: #111;
     padding: 56px 0;
 }
@@ -200,6 +209,9 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     grid-template-columns: repeat(4, 1fr);
     gap: 32px;
     text-align: center;
+}
+.stats__item {
+    padding: 8px;
 }
 .stats__number {
     display: block;
@@ -211,12 +223,12 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     margin-bottom: 4px;
 }
 .stats__text {
+    display: block;
     font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
 }
 
-/* ===== SECTION HEADER ===== */
+/* === SECTION HEADER === */
 .section-header {
     text-align: center;
     margin-bottom: 56px;
@@ -228,6 +240,7 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     letter-spacing: 0.15em;
     color: #888;
     margin-bottom: 12px;
+    text-transform: uppercase;
 }
 .section-header__title {
     font-size: 36px;
@@ -243,97 +256,108 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     margin: 0 auto;
 }
 
-/* ===== COURSES ===== */
-.courses {
+/* === VEHICLES === */
+.vehicles {
+    width: 100%;
     padding: 100px 0;
-    background: #fafafa;
+    background: #f8f8f8;
 }
-.courses__grid {
+.vehicles__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
 }
-.course-card {
+.vehicle-card {
     background: #fff;
     border-radius: 16px;
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
 }
-.course-card:hover {
+.vehicle-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
-.course-card__img {
-    aspect-ratio: 4/3;
+.vehicle-card__img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
     overflow: hidden;
 }
-.course-card__img img {
+.vehicle-card__img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s;
 }
-.course-card:hover .course-card__img img {
+.vehicle-card:hover .vehicle-card__img img {
     transform: scale(1.05);
 }
-.course-card__body {
+.vehicle-card__body {
     padding: 24px;
 }
-.course-card__name {
-    font-size: 17px;
+.vehicle-card__name {
+    font-size: 18px;
     font-weight: 700;
     color: #111;
     margin-bottom: 8px;
 }
-.course-card__desc {
+.vehicle-card__desc {
     font-size: 14px;
     color: #666;
     line-height: 1.7;
 }
 
-/* ===== SERVICES ===== */
-.services {
+/* === GOLF & ACCOMMODATION === */
+.golf {
+    width: 100%;
     padding: 100px 0;
     background: #fff;
 }
-.services__layout {
+.golf__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 64px;
     align-items: center;
+    margin-bottom: 80px;
 }
-.services__title {
-    font-size: 36px;
+.golf__row:last-child {
+    margin-bottom: 0;
+}
+.golf__row--reverse .golf__img {
+    order: 2;
+}
+.golf__row--reverse .golf__text {
+    order: 1;
+}
+.golf__img {
+    border-radius: 20px;
+    overflow: hidden;
+}
+.golf__img img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+.golf__title {
+    font-size: 32px;
     font-weight: 800;
     color: #111;
     line-height: 1.3;
     letter-spacing: -0.02em;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
-.services__desc {
+.golf__desc {
     font-size: 16px;
     color: #555;
     line-height: 1.8;
     margin-bottom: 32px;
 }
-.services__visual {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #f5f5f5;
-    border-radius: 20px;
-    padding: 80px 40px;
-}
-.services__visual img {
-    max-width: 300px;
-    width: 100%;
-    object-fit: contain;
-}
 
-/* ===== GALLERY ===== */
+/* === GALLERY === */
 .gallery {
+    width: 100%;
     padding: 100px 0;
-    background: #fafafa;
+    background: #f8f8f8;
 }
 .gallery__viewport {
     overflow: hidden;
@@ -348,12 +372,13 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     min-width: calc(33.333% - 11px);
     border-radius: 16px;
     overflow: hidden;
-    flex: none;
+    flex-shrink: 0;
 }
 .gallery__slide img {
     width: 100%;
-    aspect-ratio: 3/2;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
+    display: block;
 }
 .gallery__nav {
     display: flex;
@@ -366,7 +391,7 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     height: 48px;
     border-radius: 50%;
     background: #fff;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #ddd;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -376,14 +401,40 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     background: #111;
     border-color: #111;
 }
-.gallery__btn:hover img { filter: invert(1); }
-.gallery__btn img { width: 20px; height: 20px; }
+.gallery__btn:hover img {
+    filter: invert(1);
+}
+.gallery__btn img {
+    width: 20px;
+    height: 20px;
+}
 
-/* ===== CONTACT ===== */
+/* === CLUBHOUSE === */
+.clubhouse {
+    width: 100%;
+    padding: 80px 0;
+    background: #fff;
+}
+.clubhouse__inner {
+    text-align: center;
+}
+.clubhouse__img {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* === CONTACT === */
 .contact {
+    width: 100%;
     padding: 100px 0;
     background: #111;
     color: #fff;
+}
+.contact .section-header__label {
+    color: rgba(255, 255, 255, 0.5);
 }
 .contact__layout {
     display: grid;
@@ -391,20 +442,18 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     gap: 80px;
     align-items: center;
 }
-.contact .section-header__label {
-    color: rgba(255,255,255,0.5);
-}
 .contact__title {
     font-size: 36px;
     font-weight: 800;
     line-height: 1.3;
     letter-spacing: -0.02em;
     margin-bottom: 40px;
+    color: #fff;
 }
 .contact__details {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
 }
 .contact__detail {
     display: flex;
@@ -415,40 +464,37 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     font-size: 12px;
     font-weight: 600;
     letter-spacing: 0.1em;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255, 255, 255, 0.4);
     text-transform: uppercase;
 }
 .contact__detail-value {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     color: #fff;
 }
 .contact__company-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
-    padding: 48px 40px;
+    padding: 56px 40px;
     text-align: center;
-}
-.contact__logo {
-    width: 80px;
-    margin: 0 auto 24px;
-    object-fit: contain;
 }
 .contact__company-name {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    color: #fff;
 }
 .contact__company-addr {
-    font-size: 14px;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.6;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.7;
 }
 
-/* ===== FOOTER ===== */
+/* === FOOTER === */
 .footer {
+    width: 100%;
     background: #0a0a0a;
     padding: 32px 0;
     text-align: center;
@@ -457,19 +503,20 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     display: flex;
     flex-direction: column;
     gap: 4px;
+    align-items: center;
 }
 .footer__copy {
     font-family: 'Inter', sans-serif;
     font-size: 13px;
     font-weight: 600;
-    color: rgba(255,255,255,0.4);
+    color: rgba(255, 255, 255, 0.4);
 }
 .footer__addr {
     font-size: 12px;
-    color: rgba(255,255,255,0.25);
+    color: rgba(255, 255, 255, 0.25);
 }
 
-/* ===== ANIMATIONS ===== */
+/* === ANIMATIONS === */
 .fade-in {
     opacity: 0;
     transform: translateY(30px);
@@ -480,17 +527,17 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     transform: translateY(0);
 }
 
-/* ===== RESPONSIVE - TABLET ===== */
+/* === TABLET === */
 @media (max-width: 1024px) {
     .hero__title { font-size: 40px; }
-    .courses__grid { grid-template-columns: repeat(2, 1fr); }
-    .services__layout { gap: 48px; }
-    .services__title { font-size: 30px; }
+    .vehicles__grid { grid-template-columns: repeat(2, 1fr); }
+    .golf__row { gap: 40px; }
+    .golf__title { font-size: 28px; }
     .contact__layout { gap: 48px; }
     .contact__title { font-size: 30px; }
 }
 
-/* ===== RESPONSIVE - MOBILE ===== */
+/* === MOBILE === */
 @media (max-width: 768px) {
     .nav__links { display: none; }
     .nav__links.open {
@@ -504,31 +551,39 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
         padding: 24px;
         gap: 20px;
         border-bottom: 1px solid #eee;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
     .nav__menu { display: flex; }
 
-    .hero { min-height: 90vh; }
+    .hero { min-height: 85vh; }
     .hero__title { font-size: 32px; }
     .hero__desc { font-size: 15px; }
     .hero__content { padding: 100px 20px 60px; }
 
     .stats__grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .stats__number { font-size: 28px; }
+    .stats { padding: 40px 0; }
 
-    .section-header__title { font-size: 28px; }
-    .courses { padding: 72px 0; }
-    .courses__grid { grid-template-columns: 1fr; gap: 20px; }
+    .section-header__title { font-size: 26px; }
+    .section-header { margin-bottom: 40px; }
 
-    .services { padding: 72px 0; }
-    .services__layout {
+    .vehicles { padding: 72px 0; }
+    .vehicles__grid { grid-template-columns: 1fr; gap: 20px; }
+
+    .golf { padding: 72px 0; }
+    .golf__row {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 32px;
+        margin-bottom: 60px;
     }
-    .services__title { font-size: 28px; }
-    .services__visual { padding: 48px 24px; order: -1; }
+    .golf__row--reverse .golf__img { order: 0; }
+    .golf__row--reverse .golf__text { order: 0; }
+    .golf__title { font-size: 26px; }
 
     .gallery { padding: 72px 0; }
     .gallery__slide { min-width: calc(80% - 8px); }
+
+    .clubhouse { padding: 48px 0; }
 
     .contact { padding: 72px 0; }
     .contact__layout {
@@ -537,13 +592,12 @@ button { border: none; background: none; cursor: pointer; font: inherit; }
     }
     .contact__title { font-size: 28px; }
     .contact__company-card { padding: 36px 24px; }
+    .contact__detail-value { font-size: 18px; }
 }
 
 @media (max-width: 480px) {
     .hero__title { font-size: 28px; }
     .hero__actions { flex-direction: column; align-items: center; }
-    .btn { width: 100%; max-width: 280px; justify-content: center; }
-    .stats__grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .stats { padding: 40px 0; }
+    .btn { width: 100%; max-width: 280px; }
     .stats__number { font-size: 24px; }
 }
