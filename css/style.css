@@ -1,0 +1,685 @@
+/* ===================================================
+   ONE TRAVEL SERVER VN CO.,LTD — Main Stylesheet
+   Pixel-perfect clone from Framer source
+   =================================================== */
+
+/* ===== RESET ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'DM Sans', 'Noto Sans KR', sans-serif;
+    background: #fff;
+    color: #000;
+    overflow-x: hidden;
+    font-size: 12px;
+}
+h1,h2,h3,h4,h5,h6,p,figure { margin: 0; }
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+
+/* ===== CSS VARIABLES (from Framer tokens) ===== */
+:root {
+    --white: #fff;
+    --black: #000;
+    --gray: #444;
+    --dark-bg: #22221e;
+    --dark-text: #171717;
+    --dark-blue: #131820;
+    --shadow: rgba(0,0,0,0.1);
+    --near-black: #0a0a0a;
+    --mid-gray: #6d6d6d;
+    --button-bg: rgb(24, 33, 45);
+    --light-text: rgb(250, 250, 250);
+}
+
+
+/* ==========================================================
+   PAGE ROOT — framer-CuRFM.framer-72rtr7
+   width: 1200px, centered, flex column
+   ========================================================== */
+.page-root {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    min-height: 100vh;
+    background: #fff;
+    position: relative;
+    overflow: clip;
+}
+
+
+/* ==========================================================
+   HERO SECTION — framer-w13gz0
+   ========================================================== */
+.hero {
+    width: 100%;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background wrapper — framer-1x720r3 */
+.hero__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Image wrapper — framer-y5gfil (appear animation) */
+.hero__bg-image {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    animation: heroImgIn 1.2s ease-out forwards;
+}
+@keyframes heroImgIn {
+    from { opacity: 0.001; transform: scale(1.05); }
+    to   { opacity: 1;     transform: scale(1);    }
+}
+.hero__bg-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Dark overlay — framer-vubu0p */
+.hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.56);
+}
+
+/* Content — framer-1jwe6yu */
+.hero__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 21px;
+    width: 100%;
+    animation: heroContentIn 0.8s ease-out 0.3s both;
+}
+@keyframes heroContentIn {
+    from { opacity: 0.001; transform: translateY(150px); }
+    to   { opacity: 1;     transform: translateY(0);     }
+}
+
+.hero__spacer { height: 18px; width: 2px; flex: none; }
+
+/* Title — framer-14ordp2, Inter Black 54px */
+.hero__title {
+    font-family: 'Inter', sans-serif;
+    font-size: 54px;
+    font-weight: 900;
+    text-align: center;
+    color: #fff;
+    width: 1000px;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Description — framer-nsxjkd, DM Sans 22px */
+.hero__desc {
+    font-family: 'DM Sans', 'DM Sans Placeholder', sans-serif;
+    font-size: 22px;
+    line-height: 1.4em;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+    width: 850px;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Button wrapper — framer-1txi8d7 */
+.hero__btn-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Button — framer-sOgfX */
+.hero__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 50px;
+    background: var(--button-bg);
+    border: 1px solid var(--button-bg);
+    color: var(--light-text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    overflow: hidden;
+}
+.hero__btn:hover {
+    background: #2a3a50;
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   CONTACT / INFO SECTION — framer-14mi0mv
+   width: 1440px (overflows page root), centered
+   ========================================================== */
+.contact {
+    width: 1440px;
+    max-width: 100vw;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 80px 0 27px;
+    position: relative;
+    overflow: visible;
+}
+
+/* Inner container — framer-hbzh1m */
+.contact__inner {
+    width: 1280px;
+    max-width: 1280px;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+    z-index: 1;
+}
+
+/* Two-column row — framer-gf3sb1 */
+.contact__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+
+/* Left column: Company info — framer-1fhj280 */
+.contact__left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+    width: 50%;
+    padding: 5px 0 0;
+    flex: none;
+}
+.contact__company-name {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #0e0e0c;
+    line-height: 1.5em;
+}
+.contact__company-addr {
+    font-family: 'Figtree', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(71, 71, 71);
+    line-height: 1.5em;
+}
+
+/* Right column: Question + contacts */
+.contact__right {
+    flex: 1 0 0;
+    width: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.contact__question {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 33px;
+    color: rgb(14, 14, 12);
+    line-height: 1.2;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Contact items — framer-s78y9a */
+.contact__items {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 11px;
+    width: 550px;
+    max-width: 100%;
+}
+.contact__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    width: 550px;
+    max-width: 100%;
+}
+.contact__phone {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 29px;
+    color: var(--dark-text);
+    white-space: pre;
+}
+.contact__email {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 29px;
+    color: var(--dark-text);
+    white-space: pre;
+}
+.contact__kakao {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: var(--dark-text);
+    white-space: pre;
+}
+
+/* Divider line — framer-1bwtyyz / framer-wu0bi1 */
+.contact__divider {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    width: 100%;
+    padding: 0 0 79px;
+    z-index: 1;
+}
+.contact__line {
+    flex: 1 0 0;
+    height: 2px;
+    background: rgba(0,0,0,0.1);
+    opacity: 0.6;
+}
+
+
+/* ==========================================================
+   GOLF SERVICES — framer-2lo4if
+   ========================================================== */
+.golf {
+    width: 100%;
+    padding: 0 48px;
+    scroll-margin-top: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: visible;
+}
+
+/* Container — framer-29qy5d */
+.golf__container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 64px;
+    width: 100%;
+    max-width: 1280px;
+}
+
+/* Sidebar — framer-eepyd5 */
+.golf__sidebar {
+    flex: 1 0 0;
+    width: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    position: sticky;
+    top: 100px;
+    z-index: 1;
+}
+.golf__sidebar-label {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--dark-text);
+    line-height: 1.5;
+    width: 100%;
+}
+.golf__sidebar-title {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    color: var(--black);
+    line-height: 1.2;
+    width: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+.golf__sidebar-desc {
+    font-family: 'DM Sans', 'Noto Sans KR', sans-serif;
+    font-size: 18px;
+    color: var(--gray);
+    line-height: 1.6;
+    width: 100%;
+    text-wrap: balance;
+}
+
+/* Cards column — framer-ksioaa */
+.golf__cards {
+    flex: 1 0 0;
+    width: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* ==========================================================
+   GOLF CARD — framer-GjvPL
+   ========================================================== */
+.card {
+    width: 520px;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    cursor: pointer;
+    position: relative;
+    overflow: visible;
+}
+
+/* Visual — aspect-ratio: 1.3 */
+.card__visual {
+    width: 100%;
+    aspect-ratio: 1.3;
+    position: relative;
+    overflow: hidden;
+    flex: none;
+}
+.card__img-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+.card:hover .card__img-wrap {
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+}
+.card__img-wrap img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Content — framer-zrbcy7 */
+.card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    padding: 0 24px 0 0;
+}
+.card__text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 100%;
+}
+.card__name {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--black);
+    line-height: 1.4;
+    width: 100%;
+}
+.card__desc {
+    font-family: 'DM Sans', 'Noto Sans KR', sans-serif;
+    font-size: 15px;
+    color: var(--gray);
+    line-height: 1.6;
+    width: 100%;
+}
+
+
+/* ==========================================================
+   IMAGE CAROUSEL — framer-ep56mb
+   ========================================================== */
+.carousel {
+    width: 100%;
+    max-width: 1240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 39px;
+    padding: 60px 0;
+}
+.carousel__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 962px;
+}
+.carousel__title-img {
+    width: 411px;
+    height: 50px;
+    max-width: 100%;
+    object-fit: contain;
+}
+.carousel__viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+.carousel__track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.5s ease;
+}
+.carousel__slide {
+    min-width: calc(25% - 12px);
+    border-radius: 12px;
+    overflow: hidden;
+    flex: none;
+}
+.carousel__slide img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Nav arrows — framer-ofo0a */
+.carousel__nav {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+    padding: 6px;
+}
+.carousel__btn {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+.carousel__btn:hover { opacity: 1; }
+.carousel__btn img { width: 24px; height: 24px; }
+
+
+/* ==========================================================
+   FOOTER LOGO — framer-166s0ia
+   ========================================================== */
+.footer-logo {
+    width: 121px;
+    height: 164px;
+    flex: none;
+    overflow: clip;
+}
+.footer-logo img {
+    width: 100%; height: 100%;
+    object-fit: contain;
+}
+
+
+/* ==========================================================
+   FOOTER CONTACT — framer-1ulfprs (second Services section)
+   ========================================================== */
+.footer-contact {
+    width: 1440px;
+    max-width: 100vw;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 80px 0 27px;
+    position: relative;
+    overflow: visible;
+}
+.footer-contact__inner {
+    width: 1280px;
+    max-width: 1280px;
+    padding: 0 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 100px;
+    z-index: 1;
+}
+.footer-contact__row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+    width: 100%;
+}
+.footer-contact__left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-top: 5px;
+}
+.footer-contact__right {
+    width: 550px;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+.footer-contact__detail {
+    font-family: 'Figtree', 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.8;
+}
+
+
+/* ==========================================================
+   SCROLL ANIMATIONS
+   ========================================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* ==========================================================
+   RESPONSIVE — TABLET (810px ~ 1199px)
+   ========================================================== */
+@media (max-width: 1199.98px) {
+    .page-root { width: 810px; }
+    .hero__title { font-size: 42px; }
+    .hero__desc { font-size: 18px; width: 100%; }
+
+    .contact, .footer-contact { flex-direction: column; width: 100%; padding: 60px 0 20px; }
+    .contact__inner, .footer-contact__inner { width: 100%; padding: 0 32px; gap: 60px; }
+
+    .golf__sidebar-title { font-size: 36px; }
+    .golf__sidebar-desc { font-size: 16px; }
+    .golf__container { gap: 40px; }
+    .card { width: 100%; }
+
+    .carousel__slide { min-width: calc(33.33% - 11px); }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — MOBILE (< 810px)
+   ========================================================== */
+@media (max-width: 809.98px) {
+    .page-root { width: 390px; }
+
+    .hero { min-height: 400px; padding: 0 20px; }
+    .hero__title { font-size: 28px; width: 100%; }
+    .hero__desc { font-size: 15px; width: 100%; }
+
+    .contact, .footer-contact { flex-direction: column; width: 100%; padding: 40px 0 20px; }
+    .contact__inner, .footer-contact__inner { width: 100%; padding: 0 20px; gap: 30px; }
+    .contact__row { flex-direction: column; gap: 30px; }
+    .contact__left { width: 100%; }
+    .contact__right { width: 100%; flex: none; }
+    .contact__question { font-size: 22px; }
+    .contact__items { width: 100%; gap: 0; }
+    .contact__item { width: 100%; }
+    .contact__phone, .contact__email { font-size: 20px; }
+    .contact__kakao { font-size: 18px; }
+    .contact__divider { padding-bottom: 40px; }
+
+    .golf { padding: 0 20px; }
+    .golf__container { flex-direction: column; gap: 30px; }
+    .golf__sidebar { position: relative; top: unset; flex: none; width: 100%; }
+    .golf__sidebar-title { font-size: 27px; }
+    .golf__sidebar-desc { font-size: 15px; }
+    .golf__cards { flex: none; width: 100%; }
+    .card { width: 100%; }
+
+    .carousel { padding: 40px 20px; }
+    .carousel__slide { min-width: calc(50% - 8px); }
+
+    .footer-contact__row { flex-direction: column; gap: 30px; }
+    .footer-contact__left, .footer-contact__right { width: 100%; max-width: 100%; }
+}
